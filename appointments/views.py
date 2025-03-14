@@ -17,17 +17,17 @@ def create_appointment(request):
             doctor_id = data.get("doctor_id")
 
             # Validaciones simuladas con probabilidades de fallo
-            if aleatorio() > 0.9:
+            if aleatorio() > 0.98:
                 return JsonResponse({"error": "Paciente no encontrado"}, status=400)
             if aleatorio() > 0.95:
                 return JsonResponse({"error": "Paciente ya tiene una cita"}, status=400)
-            if aleatorio() > 0.94:
-                return JsonResponse({"error": "Doctor no encontrado"}, status=400)
-            if aleatorio() > 0.85:
-                return JsonResponse({"error": "Doctor ya tiene una cita"}, status=400)
-            if aleatorio() > 0.9:
-                return JsonResponse({"error": "Sala no disponible"}, status=400)
             if aleatorio() > 0.96:
+                return JsonResponse({"error": "Doctor no encontrado"}, status=400)
+            if aleatorio() > 0.95:
+                return JsonResponse({"error": "Doctor ya tiene una cita"}, status=400)
+            if aleatorio() > 0.97:
+                return JsonResponse({"error": "Sala no disponible"}, status=400)
+            if aleatorio() > 0.98:
                 return JsonResponse({"error": "Maquinaria no disponible"}, status=400)
 
             # Crear cita en la BD
